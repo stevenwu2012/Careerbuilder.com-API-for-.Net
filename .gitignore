@@ -8,3 +8,5 @@ build/
 *.sln.cache
 _ReSharper.*/
 *.user
+*.trx
+[Tt]est[Dd]ata/

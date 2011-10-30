@@ -30,5 +30,10 @@ namespace com.careerbuilder.api
         {
             return new Categories(DevKey, _TargetSite.Domain);
         }
+
+        public IEmployeeTypesRequest GetEmployeeTypes()
+        {
+            return new EmployeeTypes(DevKey, _TargetSite.Domain);
+        }
     }
 }
