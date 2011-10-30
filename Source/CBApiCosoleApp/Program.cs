@@ -13,7 +13,7 @@ namespace CBApiCosoleApp
     {
         static void Main(string[] args)
         {
-            var svc = new CBApi("WDAW2NR6DWHZL968QVC2");
+            var svc = new CBApi("EnterDevKey");
 
             //Make a call to https://api.careerbuilder.com/v1/categories
             List<Category> codes = svc.GetCategories()
