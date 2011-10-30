@@ -11,7 +11,7 @@ namespace com.careerbuilder.api
 {
     public class CBApi
     {
-        private TargetSite _TargetSite = null;
+        protected TargetSite _TargetSite = null;
         public string DevKey {get;set;}
 
         public CBApi()

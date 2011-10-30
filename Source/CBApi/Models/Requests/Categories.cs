@@ -6,18 +6,37 @@ using com.careerbuilder.api.Models.Service;
 using RestSharp;
 using com.careerbuilder.api.Models.Responses;
 
+
 namespace com.careerbuilder.api.Models.Requests
 {
     public class Categories : ICategoryRequest
     {
-        private string _CountryCode = "US";
-        private string _Domain = "";
-        private string _DevKey = "";
+        protected string _CountryCode = "US";
+        protected string _Domain = "";
+        protected string _DevKey = "";
+        protected IRestClient _client = new RestClient();
+        protected IRestRequest _request = new RestRequest();
 
         public Categories(string key, string domain)
         {
-            _DevKey = key;
-            _Domain = domain;
+            if (string.IsNullOrEmpty(key))
+            {
+                throw new ArgumentNullException("key", "Please provide a valid developer key");
+            }
+            else
+            {
+                _DevKey = key;
+            }
+
+            if (string.IsNullOrEmpty(domain))
+            {
+                throw new ArgumentNullException("domain", "Please provide a valid domain name");
+            }
+            else
+            {
+                _Domain = domain;
+            }
+            
         }
 
         public string BaseURL
@@ -25,7 +44,7 @@ namespace com.careerbuilder.api.Models.Requests
             get { return "/v1/categories"; }
         }
 
-        string GetRequestURL(string DevKey)
+        protected string GetRequestURL()
         {
             StringBuilder url = new StringBuilder(20);
             url.Append("https://");
@@ -48,13 +67,11 @@ namespace com.careerbuilder.api.Models.Requests
 
         public List<Responses.Category> ListAll()
         {
-            var client = new RestClient();
-            var request = new RestRequest();
-            request.AddParameter("DeveloperKey", _DevKey);
-            request.AddParameter("CountryCode", _CountryCode);
-            request.RootElement = "Categories";
-            client.BaseUrl = "https://" + _Domain + this.BaseURL;
-            var response = client.Execute<List<Category>>(request);
+            _request.AddParameter("DeveloperKey", _DevKey);
+            _request.AddParameter("CountryCode", _CountryCode);
+            _request.RootElement = "Categories";
+            _client.BaseUrl = GetRequestURL();
+            var response = _client.Execute<List<Category>>(_request);
             return response.Data;
         }
     }

@@ -13,7 +13,7 @@ namespace CBApiCosoleApp
     {
         static void Main(string[] args)
         {
-            var svc = new CBApi("EnterYourDevKey");
+            var svc = new CBApi("EnterDevKey");
             List<Category> codes = svc.GetCategories().WhereCountryCode(CountryCode.US).ListAll();
 
         }
