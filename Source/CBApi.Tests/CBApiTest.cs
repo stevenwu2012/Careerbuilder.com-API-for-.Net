@@ -1,13 +1,7 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using com.careerbuilder.api;
+﻿using com.careerbuilder.api;
 using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Responses;
 using com.careerbuilder.api.Models.Service;
-using com.careerbuilder.api.Models.Requests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.com.careerbuilder.api
 {

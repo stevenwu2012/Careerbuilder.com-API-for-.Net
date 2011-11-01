@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Configuration;
+﻿using com.careerbuilder.api.Models;
 using com.careerbuilder.api.Models.Service;
-using com.careerbuilder.api.Models.Responses;
-using com.careerbuilder.api.Models.Requests;
+
 
 namespace com.careerbuilder.api
 {
@@ -13,6 +8,8 @@ namespace com.careerbuilder.api
     {
         protected TargetSite _TargetSite = null;
         public string DevKey {get;set;}
+        public string CobrandCode { get; set; }    //If you are a careerbuilder partner you can set these tracking codes
+        public string SiteID { get; set; }         //Otherwise leave these two parameters alone
 
         public CBApi()
         {
@@ -26,14 +23,49 @@ namespace com.careerbuilder.api
             DevKey = key;
         }
 
-        public ICategoryRequest GetCategories()
+        public CBApi(string key,string cobrandCode)
         {
-            return new Categories(DevKey, _TargetSite.Domain);
+            _TargetSite = new CareerBuilderCom();
+            DevKey = key;
+            CobrandCode = cobrandCode;
         }
 
+        public CBApi(string key,string cobrandCode, string siteid)
+        {
+            _TargetSite = new CareerBuilderCom();
+            DevKey = key;
+            CobrandCode = cobrandCode;
+            SiteID = siteid;
+        }
+
+        /// <summary>
+        /// Make a call to /v1/categories
+        /// </summary>
+        /// <returns>A Category Request to query against</returns>
+        public ICategoryRequest GetCategories()
+        {
+            return new CategoriesRequest(DevKey, _TargetSite.Domain, CobrandCode, SiteID);
+        }
+
+        /// <summary>
+        /// Make a call to /v1/employeetypes
+        /// </summary>
+        /// <returns>A Employee Request to query against</returns>
         public IEmployeeTypesRequest GetEmployeeTypes()
         {
-            return new EmployeeTypes(DevKey, _TargetSite.Domain);
+            return new EmployeeTypesRequest(DevKey, _TargetSite.Domain, CobrandCode, SiteID);
         }
+
+        /// <summary>
+        /// Make a call to /v1/job
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public Job GetJob(string jobDID)
+        {
+            var req = new JobRequest(jobDID, DevKey, _TargetSite.Domain, CobrandCode, SiteID);
+            return req.Retrieve();
+        }
+
     }
 }

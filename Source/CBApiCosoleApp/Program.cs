@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using com.careerbuilder.api;
 using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Responses;
 using com.careerbuilder.api.Models.Service;
 
 namespace CBApiCosoleApp
@@ -13,7 +12,7 @@ namespace CBApiCosoleApp
     {
         static void Main(string[] args)
         {
-            var svc = new CBApi("EnterDevKey");
+            var svc = new CBApi("Enter Dev Key");
 
             //Make a call to https://api.careerbuilder.com/v1/categories
             List<Category> codes = svc.GetCategories()
@@ -33,6 +32,8 @@ namespace CBApiCosoleApp
                 Console.WriteLine(emp.Code);
             }
 
+            Job myJob = svc.GetJob("J8D4K96C22QLXRC37C1");
+            Console.WriteLine(myJob.JobTitle);
         }
     }
 }

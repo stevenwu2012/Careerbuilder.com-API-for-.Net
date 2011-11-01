@@ -54,8 +54,10 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Requests\CategoriesTest.cs" />
-    <Compile Include="Models\Requests\EmployeeTypesTest.cs" />
+    <Compile Include="Models\Requests\CategoriesRequestTest.cs" />
+    <Compile Include="Models\Requests\JobRequestTest.cs" />
+    <Compile Include="Models\Requests\GetRequestTest.cs" />
+    <Compile Include="Models\Requests\EmployeeTypesRequestTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CBApiTest.cs" />
   </ItemGroup>
