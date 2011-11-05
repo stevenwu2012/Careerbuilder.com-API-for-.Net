@@ -47,16 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBApi.cs" />
+    <Compile Include="Models\QueryInterfaces\IJobSearch.cs" />
     <Compile Include="Models\Requests\CategoriesRequest.cs" />
+    <Compile Include="Models\Requests\JobSearchRequest.cs" />
     <Compile Include="Models\Requests\JobRequest.cs" />
     <Compile Include="Models\Requests\GetRequest.cs" />
     <Compile Include="Models\Requests\EmployeeTypesRequest.cs" />
     <Compile Include="Models\QueryInterfaces\IEmployeeTypesRequest.cs" />
     <Compile Include="Models\QueryInterfaces\ICategoryRequest.cs" />
     <Compile Include="Models\Responses\Category.cs" />
+    <Compile Include="Models\Responses\BlankApplication.cs" />
+    <Compile Include="Models\Responses\Education.cs" />
+    <Compile Include="Models\Responses\JobSearchResult.cs" />
+    <Compile Include="Models\Responses\ResponseApplication.cs" />
     <Compile Include="Models\Responses\EmployeeType.cs" />
     <Compile Include="Models\Responses\Job.cs" />
     <Compile Include="Models\Responses\Money.cs" />
+    <Compile Include="Models\Responses\Question.cs" />
+    <Compile Include="Models\Responses\ResponseJobSearch.cs" />
     <Compile Include="Models\Service\CareerBuilder.Com.cs" />
     <Compile Include="Models\Service\CountryCodes.cs" />
     <Compile Include="Models\Service\TargetSite.cs" />

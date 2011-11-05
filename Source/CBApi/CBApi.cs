@@ -67,5 +67,14 @@ namespace com.careerbuilder.api
             return req.Retrieve();
         }
 
+        /// <summary>
+        /// Make a call to /v1/jobsearch
+        /// </summary>
+        /// <returns>A Job Request to query against</returns>
+        public IJobSearch JobSearch()
+        {
+            return new JobSearchRequest(DevKey, _TargetSite.Domain, CobrandCode, SiteID);
+        }
+
     }
 }

@@ -32,6 +32,7 @@ namespace CBApiCosoleApp
                 Console.WriteLine(emp.Code);
             }
 
+            //Make a call to https://api.careerbuilder.com/v1/job
             Job myJob = svc.GetJob("J8D4K96C22QLXRC37C1");
             Console.WriteLine(myJob.JobTitle);
         }

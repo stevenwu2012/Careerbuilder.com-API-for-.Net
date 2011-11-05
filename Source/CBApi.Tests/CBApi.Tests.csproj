@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Requests\CategoriesRequestTest.cs" />
+    <Compile Include="Models\Requests\JobSearchRequestTest.cs" />
     <Compile Include="Models\Requests\JobRequestTest.cs" />
     <Compile Include="Models\Requests\GetRequestTest.cs" />
     <Compile Include="Models\Requests\EmployeeTypesRequestTest.cs" />

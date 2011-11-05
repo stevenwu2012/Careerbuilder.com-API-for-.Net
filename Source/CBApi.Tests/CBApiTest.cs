@@ -28,6 +28,13 @@ namespace Tests.com.careerbuilder.api
             CBApi svc = new CBApi();
             Assert.IsInstanceOfType(svc.GetEmployeeTypes(), typeof(IEmployeeTypesRequest));
         }
+
+        [TestMethod]
+        public void JobSearch_ReturnsJobSearchRequest()
+        {
+            CBApi svc = new CBApi();
+            Assert.IsInstanceOfType(svc.JobSearch(), typeof(IJobSearch));
+        }
     }
 
     public class CBApiStub : CBApi
