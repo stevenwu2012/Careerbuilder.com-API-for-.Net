@@ -13,7 +13,7 @@ namespace com.careerbuilder.api.Models
         OR
     }
 
-    public enum OrderBy
+    public enum OrderByType
     {
         Date,
         Pay,
@@ -45,9 +45,9 @@ namespace com.careerbuilder.api.Models
         protected List<string> _EmployeeTypes = new List<string>();
         protected int _MinPay = -1;
         protected int _MaxPay = -1;
-        protected int _PageNumber = 1;
+        protected int _OffSet = 1;
         protected int _PerPage = 25;
-        protected OrderBy _OrderBy = OrderBy.Relevance;
+        protected OrderByType _OrderBy = OrderByType.Relevance;
         protected OrderDirection _OrderDirection = OrderDirection.Descending;
         protected BooleanOperator _BooleanOperator = BooleanOperator.AND;
         protected bool ExcludeNationwideJobs = true;
@@ -183,25 +183,25 @@ namespace com.careerbuilder.api.Models
             return this;
         }
 
-        public IJobSearch Keywords(string value)
+        public IJobSearch WhereKeywords(string value)
         {
             _Keywords = value;
             return this;
         }
 
-        public IJobSearch CompanyName(string value)
+        public IJobSearch WhereCompanyName(string value)
         {
             _CompanyName = value;
             return this;
         }
 
-        public IJobSearch Location(string value)
+        public IJobSearch WhereLocation(string value)
         {
             _Location = value;
             return this;
         }
 
-        public IJobSearch Location(float latitude, float longitude)
+        public IJobSearch WhereLocation(float latitude, float longitude)
         {
             _Location = latitude.ToString() + "::" + longitude.ToString();
             return this;
@@ -210,6 +210,60 @@ namespace com.careerbuilder.api.Models
         public IJobSearch Radius(int value)
         {
             _Radius = value;
+            return this;
+        }
+
+        public IJobSearch WhereSOCCode(string value)
+        {
+            _Soccode = value;
+            return this;
+        }
+
+        public IJobSearch WherePayGreaterThan(int value)
+        {
+            _MinPay = value;
+            return this;
+        }
+
+        public IJobSearch WherePayLessThan(int value)
+        {
+            _MaxPay = value;
+            return this;
+        }
+
+        public IJobSearch OrderBy(OrderByType value)
+        {
+            _OrderBy = value;
+            return this;
+        }
+
+        public IJobSearch Ascending()
+        {
+            _OrderDirection = OrderDirection.Ascending;
+            return this;
+        }
+
+        public IJobSearch Descending()
+        {
+            _OrderDirection = OrderDirection.Descending;
+            return this;
+        }
+
+        public IJobSearch SelectTop(int value)
+        {
+            _PerPage = value;
+            return this;
+        }
+
+        public IJobSearch Limit(int value)
+        {
+            _PerPage = value;
+            return this;
+        }
+
+        public IJobSearch Offset(int value)
+        {
+            _OffSet = value;
             return this;
         }
         #endregion
