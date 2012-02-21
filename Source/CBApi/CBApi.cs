@@ -57,6 +57,18 @@ namespace com.careerbuilder.api
         }
 
         /// <summary>
+        /// Make a call to /v1/application/blank
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public BlankApplication GetBlankApplication(string jobDID)
+        {
+            var req = new BlankApplicationRequest(jobDID, DevKey, _TargetSite.Domain, CobrandCode, SiteID);
+            return req.Retrieve();
+        }
+
+
+        /// <summary>
         /// Make a call to /v1/job
         /// </summary>
         /// <param name="jobDID">The unique ID of the job</param>

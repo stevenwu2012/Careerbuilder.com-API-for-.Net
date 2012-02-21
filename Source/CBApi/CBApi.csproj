@@ -49,6 +49,7 @@
     <Compile Include="CBApi.cs" />
     <Compile Include="Models\QueryInterfaces\IJobSearch.cs" />
     <Compile Include="Models\Requests\CategoriesRequest.cs" />
+    <Compile Include="Models\Requests\BlankApplicationRequest.cs" />
     <Compile Include="Models\Requests\JobSearchRequest.cs" />
     <Compile Include="Models\Requests\JobRequest.cs" />
     <Compile Include="Models\Requests\GetRequest.cs" />

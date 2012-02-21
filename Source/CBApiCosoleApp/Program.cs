@@ -12,7 +12,7 @@ namespace CBApiCosoleApp
     {
         static void Main(string[] args)
         {
-            var svc = new CBApi("Enter Dev Key");
+            var svc = new CBApi("Enter your dev key");
 
             //Make a call to https://api.careerbuilder.com/v1/categories
             List<Category> codes = svc.GetCategories()
@@ -33,8 +33,12 @@ namespace CBApiCosoleApp
             }
 
             //Make a call to https://api.careerbuilder.com/v1/job
-            Job myJob = svc.GetJob("J8D4K96C22QLXRC37C1");
+            Job myJob = svc.GetJob("J3T62Q6CCYHCV0Z4DB6");
             Console.WriteLine(myJob.JobTitle);
+
+            //Make a call to https://api.careerbuilder.com/v1/application/blank
+            BlankApplication myApp = svc.GetBlankApplication("J3T62Q6CCYHCV0Z4DB6");
+
         }
     }
 }
