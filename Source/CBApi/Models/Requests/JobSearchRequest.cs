@@ -67,7 +67,6 @@ namespace com.careerbuilder.api.Models
         {
             base.BeforeRequest();
             AddParametersToRequest();
-            _request.RootElement = "ResponseJobSearch";
             var response = _client.Execute<ResponseJobSearch>(_request);
             return response.Data;
         }

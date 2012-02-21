@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using com.careerbuilder.api;
 using com.careerbuilder.api.Models;
+using com.careerbuilder.api.Models.Responses;
 using com.careerbuilder.api.Models.Service;
 
 namespace CBApiCosoleApp
@@ -12,7 +11,7 @@ namespace CBApiCosoleApp
     {
         static void Main(string[] args)
         {
-            var svc = new CBApi("Enter your dev key");
+            var svc = new CBApi("EnterDevKey");
 
             //Make a call to https://api.careerbuilder.com/v1/categories
             List<Category> codes = svc.GetCategories()
@@ -32,12 +31,29 @@ namespace CBApiCosoleApp
                 Console.WriteLine(emp.Code);
             }
 
+            //Search for Jobs
+            var search = svc.JobSearch()
+                             .WhereKeywords("Sales")
+                             .WhereLocation("Atlanta,GA")
+                             .WhereCountryCode(CountryCode.US)
+                             .OrderBy(OrderByType.Title)
+                             .Ascending()
+                             .Search();
+            var jobs = search.Results;
+            foreach (JobSearchResult item in jobs)
+            {
+                Console.WriteLine(item.JobTitle);
+            }
+
+            
             //Make a call to https://api.careerbuilder.com/v1/job
             Job myJob = svc.GetJob("J3T62Q6CCYHCV0Z4DB6");
             Console.WriteLine(myJob.JobTitle);
 
             //Make a call to https://api.careerbuilder.com/v1/application/blank
             BlankApplication myApp = svc.GetBlankApplication("J3T62Q6CCYHCV0Z4DB6");
+
+            
 
         }
     }
