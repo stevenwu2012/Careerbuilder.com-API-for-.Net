@@ -50,6 +50,7 @@
     <Compile Include="Models\QueryInterfaces\IJobSearch.cs" />
     <Compile Include="Models\Requests\CategoriesRequest.cs" />
     <Compile Include="Models\Requests\BlankApplicationRequest.cs" />
+    <Compile Include="Models\Requests\JobRecommendationsRequest.cs" />
     <Compile Include="Models\Requests\JobSearchRequest.cs" />
     <Compile Include="Models\Requests\JobRequest.cs" />
     <Compile Include="Models\Requests\GetRequest.cs" />
@@ -58,6 +59,9 @@
     <Compile Include="Models\QueryInterfaces\ICategoryRequest.cs" />
     <Compile Include="Models\Responses\Category.cs" />
     <Compile Include="Models\Responses\BlankApplication.cs" />
+    <Compile Include="Models\Responses\Company.cs" />
+    <Compile Include="Models\Responses\Location.cs" />
+    <Compile Include="Models\Responses\RecommendJobResult.cs" />
     <Compile Include="Models\Responses\Education.cs" />
     <Compile Include="Models\Responses\JobSearchResult.cs" />
     <Compile Include="Models\Responses\ResponseApplication.cs" />

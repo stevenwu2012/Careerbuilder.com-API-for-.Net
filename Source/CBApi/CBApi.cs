@@ -1,6 +1,6 @@
 ﻿using com.careerbuilder.api.Models;
 using com.careerbuilder.api.Models.Service;
-
+using System.Collections.Generic;
 
 namespace com.careerbuilder.api
 {
@@ -77,6 +77,17 @@ namespace com.careerbuilder.api
         {
             var req = new JobRequest(jobDID, DevKey, _TargetSite.Domain, CobrandCode, SiteID);
             return req.Retrieve();
+        }
+
+        /// <summary>
+        /// Make a call to /v1/job
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public List<RecommendJobResult> GetRecommendationsForJob(string jobDID)
+        {
+            var req = new JobRecommendationsRequest(jobDID, DevKey, _TargetSite.Domain, CobrandCode, SiteID);
+            return req.GetRecommendations();
         }
 
         /// <summary>

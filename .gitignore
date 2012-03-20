@@ -4,9 +4,12 @@
 build/
 [Bb]in/
 [Oo]bj/
+Source/TestResults/
 *.sou
 *.sln.cache
 _ReSharper.*/
 *.user
 *.trx
 [Tt]est[Dd]ata/
+Thumbs.db
+TestResults

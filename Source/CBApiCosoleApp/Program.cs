@@ -45,9 +45,15 @@ namespace CBApiCosoleApp
                 Console.WriteLine(item.JobTitle);
             }
 
+            //Make a call to https://api.careerbuilder.com/v1/recommendations/forjob
+            List<RecommendJobResult> jobRecs = svc.GetRecommendationsForJob(jobs[0].DID);
+            foreach (RecommendJobResult item in jobRecs)
+            {
+                Console.WriteLine(item.Title);
+            }
             
             //Make a call to https://api.careerbuilder.com/v1/job
-            Job myJob = svc.GetJob("J3T62Q6CCYHCV0Z4DB6");
+            Job myJob = svc.GetJob(jobs[0].DID);
             Console.WriteLine(myJob.JobTitle);
 
             //Make a call to https://api.careerbuilder.com/v1/application/blank

@@ -79,7 +79,7 @@ namespace Tests.com.careerbuilder.api.Requests
             
             //Assert
             ResponseJobSearch resp = request.WhereCountryCode(CountryCode.NL).Search();
-            restReq.VerifyAll();
+            restReq.Verify();
             restClient.VerifyAll();
         }
     }
