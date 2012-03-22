@@ -50,6 +50,7 @@
     <Compile Include="Models\QueryInterfaces\IJobSearch.cs" />
     <Compile Include="Models\Requests\CategoriesRequest.cs" />
     <Compile Include="Models\Requests\BlankApplicationRequest.cs" />
+    <Compile Include="Models\Requests\UserRecommendationsRequest.cs" />
     <Compile Include="Models\Requests\JobRecommendationsRequest.cs" />
     <Compile Include="Models\Requests\JobSearchRequest.cs" />
     <Compile Include="Models\Requests\JobRequest.cs" />

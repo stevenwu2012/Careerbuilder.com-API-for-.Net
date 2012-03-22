@@ -31,7 +31,7 @@ namespace com.careerbuilder.api.Models.Service
     public enum HostSite
     {
         AH, // Headhunter.com
-        CC, 
+        CC, // careerrookie.com
         CE, // 
         CY, // 
         ER, // 
@@ -39,7 +39,8 @@ namespace com.careerbuilder.api.Models.Service
         GC, // careerbuildergulf.com
         JC, // 
         JS, // 
-        RX, // 
+        LJ, // lesjeudis.com
+        RX, // recrulex.com
         S1, // 
         SF, // staffnurse.com 
         SG, // sologig.com

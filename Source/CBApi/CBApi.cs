@@ -91,6 +91,17 @@ namespace com.careerbuilder.api
         }
 
         /// <summary>
+        /// Make a call to /v1/job
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public List<RecommendJobResult> GetRecommendationsForUser(string externalID)
+        {
+            var req = new UserRecommendationsRequest(externalID, DevKey, _TargetSite.Domain, CobrandCode, SiteID);
+            return req.GetRecommendations();
+        }
+
+        /// <summary>
         /// Make a call to /v1/jobsearch
         /// </summary>
         /// <returns>A Job Request to query against</returns>
