@@ -1,10 +1,31 @@
-﻿using System.Collections.Generic;
-using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Service;
-using com.careerbuilder.api.Models.Responses;
+﻿using com.careerbuilder.api.models.responses;
+using com.careerbuilder.api.models.service;
 
-namespace com.careerbuilder.api.Models
+namespace com.careerbuilder.api.models
 {
+    public enum BooleanOperator
+    {
+        AND,
+        OR
+    }
+
+    public enum OrderByType
+    {
+        Date,
+        Pay,
+        Title,
+        Company,
+        Distace,
+        Location,
+        Relevance
+    }
+
+    public enum OrderDirection
+    {
+        Ascending,
+        Descending
+    }
+
     public interface IJobSearch
     {
         IJobSearch WhereKeywords(string value);

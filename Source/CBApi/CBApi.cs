@@ -1,6 +1,8 @@
-﻿using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Service;
+﻿using System;
 using System.Collections.Generic;
+using com.careerbuilder.api.framework.requests;
+using com.careerbuilder.api.models;
+using com.careerbuilder.api.models.service;
 
 namespace com.careerbuilder.api
 {
@@ -67,6 +69,27 @@ namespace com.careerbuilder.api
             return req.Retrieve();
         }
 
+        /// <summary>
+        /// Make a call to /v1/application/form
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public string GetApplicationForm(string jobDID)
+        {
+            var req = new ApplicationFormRequest(jobDID, DevKey, _TargetSite.Domain);
+            return req.Retrieve();
+        }
+
+        /// <summary>
+        /// Submit an application to /v1/application/submit
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public ResponseApplication SubmitApplication(Application app)
+        {
+            var req = new SubmitApplicationRequest(_TargetSite.Domain);
+            return req.Submit(app);
+        }
 
         /// <summary>
         /// Make a call to /v1/job

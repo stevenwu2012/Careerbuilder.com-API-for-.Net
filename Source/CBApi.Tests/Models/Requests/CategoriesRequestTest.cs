@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
-using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Service;
+using com.careerbuilder.api.models;
+using com.careerbuilder.api.models.service;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
+using com.careerbuilder.api.framework.requests;
 
 namespace Tests.com.careerbuilder.api.Requests
 {
@@ -84,7 +85,7 @@ namespace Tests.com.careerbuilder.api.Requests
         }
     }
 
-    public class CategoriesStub : CategoriesRequest
+    class CategoriesStub : CategoriesRequest
     {
         public string DevKey
         {

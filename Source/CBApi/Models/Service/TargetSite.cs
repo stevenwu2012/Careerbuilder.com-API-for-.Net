@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace com.careerbuilder.api.Models.Service
+﻿namespace com.careerbuilder.api.models.service
 {
     public abstract class TargetSite
     {

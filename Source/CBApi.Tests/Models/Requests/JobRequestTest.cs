@@ -1,5 +1,6 @@
 ﻿using System;
-using com.careerbuilder.api.Models;
+using com.careerbuilder.api.framework.requests;
+using com.careerbuilder.api.models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
@@ -124,7 +125,7 @@ namespace Tests.com.careerbuilder.api.Requests
         }
     }
 
-    public class JobRequestStub : JobRequest
+    class JobRequestStub : JobRequest
     {
         public string DevKey
         {

@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Service;
+﻿using System;
+using System.Collections.Generic;
+using com.careerbuilder.api.framework.requests;
+using com.careerbuilder.api.models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
-using com.careerbuilder.api.Models.Responses;
-using System;
 
 namespace Tests.com.careerbuilder.api.Requests
 {
@@ -79,7 +78,7 @@ namespace Tests.com.careerbuilder.api.Requests
         }
     }
 
-    public class UserReqStub : UserRecommendationsRequest
+    class UserReqStub : UserRecommendationsRequest
     {
         public string ExternalID
         {

@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
-using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Service;
+using com.careerbuilder.api.models;
+using com.careerbuilder.api.models.service;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
-using com.careerbuilder.api.Models.Responses;
+using com.careerbuilder.api.models.responses;
+using com.careerbuilder.api.framework.requests;
 
 namespace Tests.com.careerbuilder.api.Requests
 {
@@ -84,7 +85,7 @@ namespace Tests.com.careerbuilder.api.Requests
         }
     }
 
-    public class JobSearchStub : JobSearchRequest
+    class JobSearchStub : JobSearchRequest
     {
         public string DevKey
         {

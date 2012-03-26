@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Service;
+﻿using System;
+using com.careerbuilder.api.framework.requests;
+using com.careerbuilder.api.models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
-using com.careerbuilder.api.Models.Responses;
-using System;
 
 namespace Tests.com.careerbuilder.api.Requests
 {
@@ -75,7 +73,7 @@ namespace Tests.com.careerbuilder.api.Requests
         }
 
         [TestMethod]
-        public void GetRecommendations_PerformsCorrectRequest()
+        public void Retrieve_PerformsCorrectRequest()
         {
             //Setup
             BlankAppStub request = new BlankAppStub("JXXXXXXXXXXXXXXXXXX", "DevKey", "api.careerbuilder.com", "", "");
@@ -103,7 +101,7 @@ namespace Tests.com.careerbuilder.api.Requests
         }
     }
 
-    public class BlankAppStub : BlankApplicationRequest
+    class BlankAppStub : BlankApplicationRequest
     {
         public string JobDID
         {

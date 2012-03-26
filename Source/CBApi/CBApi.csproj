@@ -31,11 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>..\packages\RestSharp.102.3\lib\net35\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=102.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.102.7\lib\net35\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,33 +49,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBApi.cs" />
-    <Compile Include="Models\QueryInterfaces\IJobSearch.cs" />
-    <Compile Include="Models\Requests\CategoriesRequest.cs" />
-    <Compile Include="Models\Requests\BlankApplicationRequest.cs" />
-    <Compile Include="Models\Requests\UserRecommendationsRequest.cs" />
-    <Compile Include="Models\Requests\JobRecommendationsRequest.cs" />
-    <Compile Include="Models\Requests\JobSearchRequest.cs" />
-    <Compile Include="Models\Requests\JobRequest.cs" />
-    <Compile Include="Models\Requests\GetRequest.cs" />
-    <Compile Include="Models\Requests\EmployeeTypesRequest.cs" />
-    <Compile Include="Models\QueryInterfaces\IEmployeeTypesRequest.cs" />
-    <Compile Include="Models\QueryInterfaces\ICategoryRequest.cs" />
-    <Compile Include="Models\Responses\Category.cs" />
-    <Compile Include="Models\Responses\BlankApplication.cs" />
-    <Compile Include="Models\Responses\Company.cs" />
-    <Compile Include="Models\Responses\Location.cs" />
-    <Compile Include="Models\Responses\RecommendJobResult.cs" />
-    <Compile Include="Models\Responses\Education.cs" />
-    <Compile Include="Models\Responses\JobSearchResult.cs" />
-    <Compile Include="Models\Responses\ResponseApplication.cs" />
-    <Compile Include="Models\Responses\EmployeeType.cs" />
-    <Compile Include="Models\Responses\Job.cs" />
-    <Compile Include="Models\Responses\Money.cs" />
-    <Compile Include="Models\Responses\Question.cs" />
-    <Compile Include="Models\Responses\ResponseJobSearch.cs" />
-    <Compile Include="Models\Service\CareerBuilder.Com.cs" />
-    <Compile Include="Models\Service\CountryCodes.cs" />
-    <Compile Include="Models\Service\TargetSite.cs" />
+    <Compile Include="framework\requests\ApplicationFormRequest.cs" />
+    <Compile Include="framework\requests\PostRequest.cs" />
+    <Compile Include="framework\requests\SubmitApplicationRequest.cs" />
+    <Compile Include="models\Application.cs" />
+    <Compile Include="models\Resume.cs" />
+    <Compile Include="models\queryInterfaces\IJobSearch.cs" />
+    <Compile Include="framework\requests\CategoriesRequest.cs" />
+    <Compile Include="framework\requests\BlankApplicationRequest.cs" />
+    <Compile Include="framework\requests\UserRecommendationsRequest.cs" />
+    <Compile Include="framework\requests\JobRecommendationsRequest.cs" />
+    <Compile Include="framework\requests\JobSearchRequest.cs" />
+    <Compile Include="framework\requests\JobRequest.cs" />
+    <Compile Include="framework\requests\GetRequest.cs" />
+    <Compile Include="framework\requests\EmployeeTypesRequest.cs" />
+    <Compile Include="models\queryInterfaces\IEmployeeTypesRequest.cs" />
+    <Compile Include="models\queryInterfaces\ICategoryRequest.cs" />
+    <Compile Include="models\Category.cs" />
+    <Compile Include="models\BlankApplication.cs" />
+    <Compile Include="models\Company.cs" />
+    <Compile Include="models\Location.cs" />
+    <Compile Include="models\RecommendJobResult.cs" />
+    <Compile Include="models\Education.cs" />
+    <Compile Include="models\JobSearchResult.cs" />
+    <Compile Include="models\ResponseApplication.cs" />
+    <Compile Include="models\EmployeeType.cs" />
+    <Compile Include="models\Job.cs" />
+    <Compile Include="models\Money.cs" />
+    <Compile Include="models\Question.cs" />
+    <Compile Include="models\ResponseJobSearch.cs" />
+    <Compile Include="models\service\CareerBuilder.Com.cs" />
+    <Compile Include="models\service\CountryCodes.cs" />
+    <Compile Include="models\service\TargetSite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

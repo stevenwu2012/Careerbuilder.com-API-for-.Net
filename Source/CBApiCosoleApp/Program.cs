@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using com.careerbuilder.api;
-using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Responses;
-using com.careerbuilder.api.Models.Service;
+using com.careerbuilder.api.models;
+using com.careerbuilder.api.models.responses;
+using com.careerbuilder.api.models.service;
+using com.careerbuilder.api.framework.requests;
 
 namespace CBApiCosoleApp
 {
@@ -57,10 +58,16 @@ namespace CBApiCosoleApp
             Console.WriteLine(myJob.JobTitle);
 
             //Make a call to https://api.careerbuilder.com/v1/application/blank
-            BlankApplication myApp = svc.GetBlankApplication("J3T62Q6CCYHCV0Z4DB6");
+            BlankApplication myApp = svc.GetBlankApplication(jobs[0].DID);
 
-            
+            //Make a call to https://api.careerbuilder.com/v1/application/submit in test mode
+            myApp.Test = true;
+            ResponseApplication tempResponse = svc.SubmitApplication(myApp);
+            Console.WriteLine(tempResponse.ApplicationStatus);
 
+            //Make a call to https://api.careerbuilder.com/v1/application/form
+            string form = svc.GetApplicationForm(jobs[0].DID);
+            Console.WriteLine(form);
         }
     }
 }

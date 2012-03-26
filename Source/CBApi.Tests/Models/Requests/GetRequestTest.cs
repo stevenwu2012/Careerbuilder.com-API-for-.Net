@@ -1,8 +1,9 @@
 ﻿using System;
-using com.careerbuilder.api.Models;
+using com.careerbuilder.api.models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
+using com.careerbuilder.api.framework.requests;
 
 namespace Tests.com.careerbuilder.api.Requests
 {
@@ -141,7 +142,7 @@ namespace Tests.com.careerbuilder.api.Requests
 
     }
 
-    public class GetRequestStub : GetRequest
+    class GetRequestStub : GetRequest
     {
         public string DevKey
         {

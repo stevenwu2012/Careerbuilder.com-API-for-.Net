@@ -1,6 +1,6 @@
 ﻿using com.careerbuilder.api;
-using com.careerbuilder.api.Models;
-using com.careerbuilder.api.Models.Service;
+using com.careerbuilder.api.models;
+using com.careerbuilder.api.models.service;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.com.careerbuilder.api
